@@ -1,1 +1,1 @@
-**Python & DSA**
+*Python & DSA*
