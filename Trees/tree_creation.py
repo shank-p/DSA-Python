@@ -36,6 +36,13 @@ class BinaryTreeNode():
             self.left.preorderTraversal()
         if self.right:
             self.right.preorderTraversal()
+    
+    def postorderTraversal(self):
+        if self.left:
+            self.left.postorderTraversal()
+        if self.right:
+            self.right.postorderTraversal()
+        print(self.data)
 
 
 
@@ -50,6 +57,6 @@ A.insert(90)
 A.insert(41)
 A.insert(1)
 
-A.preorderTraversal()
+A.postorderTraversal()
 
 
