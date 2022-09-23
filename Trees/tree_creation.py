@@ -45,6 +45,29 @@ class BinaryTreeNode():
         print(self.data)
 
 
+def height(node:BinaryTreeNode)->int:
+    if node is None:
+        return 0
+    else:
+        return max(height(node.left), height(node.right)) + 1 
+
+def size(node:BinaryTreeNode)->int:
+    if node is None:
+        return 0
+    else:
+        return size(node.left) + size(node.right) + 1
+
+def max_in_tree(node):
+    if node is None:
+        return -999 # -infy
+    else:
+        return max(max_in_tree(node.left), max_in_tree(node.right), node.data)
+
+def min_in_tree(node):
+    if node is None: # +infy
+        return 999
+    else:
+        return min(node.data, min_in_tree(node.left), min_in_tree(node.right))
 
 A = BinaryTreeNode(10)
 A.insert(5)
@@ -56,7 +79,16 @@ A.insert(712)
 A.insert(90)
 A.insert(41)
 A.insert(1)
+A.insert(999)
+A.insert(1000)
 
-A.postorderTraversal()
+# height = height(A)
+# print(height)
+# size = size(A)
+# print(size)
 
+# max = max_in_tree(A)
+# print(max)
 
+# min = min_in_tree(A)
+# print(min)
