@@ -1,22 +1,16 @@
-arr = [1, 2, 3]
+"""
+    Subset using recursion
+"""
 
-substr = []
-def substring(nums):
-    for i in range(len(nums)):
-        for j in range(i+1, len(nums)+1):
-            substr.append(arr[i:j])
-substring(arr)
-print(substr)
+subs = []
+def subset(res, arr):
+    if len(arr) == 0:
+        subs.append(res)
+        return 
+    char = arr[0]
+    subset(res + str(char), arr[1:])
+    subset(res, arr[1:])
 
-subsets = []
-def subsequence(arr, i, subarr):
-    if len(arr)==i:
-        if subarr not in subsets:
-            subsets.append(subarr)
-        return
-    subsequence(arr, i+1, subarr+[arr[i]]) 
-    subsequence(arr, i+1, subarr)
+subset('', [1, 2, 3, 4, 5])
 
-subsequence(arr, 0, [])
-print(subsets)
-    
+print(subs)
