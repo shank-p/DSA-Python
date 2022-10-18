@@ -13,7 +13,7 @@ def findPerms(p, up):
         print(p)
         return
     char = up[0]
-    for i in range(len(p)+1, 2):
+    for i in range(len(p)+1):
         findPerms(p[:i] + char + p[i:], up[1:])
 
 findPerms('', s)
